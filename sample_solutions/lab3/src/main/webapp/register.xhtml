@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <body>
+        <ui:composition template="/WEB-INF/templates/template.xhtml">
+            <ui:define name="navigation">
+                <ul>
+                    <li><a id="backToLogin" href="#{facesContext.externalContext.requestContextPath}/index.xhtml" tabindex="1">#{msg.backtologin}</a></li>
+                </ul>
+            </ui:define>
+            <ui:define name="main-area">
+                <div id="content">
+                    <h2>#{msg.register}</h2>
+                    <p>#{msg.fillin}</p>
+                    <h:form id="form">
+                        <h3>#{msg.persdatahead}</h3>
+                        <fieldset>
+                            <h:outputLabel class="registerform" for="firstname" value="#{msg.firstname}"/>
+                            <h:inputText required="true" id="firstname" label="#{msg.firstname}" value="#{rc.newplayer.firstname}"  tabindex="2">
+                                <f:validateRegex pattern="[A-Za-z][A-Za-z]*"/>
+                            </h:inputText>
+                            <h:messages id="firstname_messages" class="validation_error" for="firstname"  showDetail="true" showSummary="false"/>
+
+                            <h:outputLabel class="registerform" for="lastname" value="#{msg.lastname}"/>
+                            <h:inputText required="true" id="lastname" label="#{msg.lastname}" value="#{rc.newplayer.lastname}" tabindex="3">
+                                <f:validateRegex pattern="[A-Za-z][A-Za-z]*"/>
+                            </h:inputText>
+                            <h:messages id="lastname_messages" class="validation_error" for="lastname" showDetail="true" showSummary="false"/>
+
+                            <h:outputLabel class="registerform" for="dateofbirth" value="#{msg.birthdate}"/>
+                            <h:inputText required="true" id="dateofbirth" label="#{msg.birthdate}" value="#{rc.newplayer.birthday}" validator="#{rc.validateBirthday}" tabindex="4">
+                            </h:inputText>
+                            <h:messages id="dateofbirth_messages" class="validation_error" for="dateofbirth" showDetail="true" showSummary="false"/>
+
+                            <h:outputLabel class="registerform" for="sex" value="#{msg.sex}"/>
+                            <h:selectOneMenu id="sex" label="#{msg.sex}" value="#{rc.newplayer.sex}" tabindex="5">
+                                <f:selectItem itemValue="w" itemLabel="#{msg.female}"/>
+                                <f:selectItem itemValue="m" itemLabel="#{msg.male}"/>
+                            </h:selectOneMenu>
+                        </fieldset>
+
+                        <h3>#{msg.logindatahead}</h3>
+                        <fieldset class="formblock">
+                            <h:outputLabel class="registerform" for="username" value="#{msg.username}"/>
+                            <h:inputText required="true"  id="username" label="#{msg.username}" value="#{rc.newplayer.name}" tabindex="6">
+                                <f:validateRegex pattern="[A-Za-z][A-Za-z]*"/>
+                            </h:inputText>
+                            <h:messages id="username_messages" class="validation_error" for="username" showDetail="true" showSummary="false"/>
+
+                            <h:outputLabel class="registerform" for="password" value="#{msg.password}"/>
+                            <h:inputSecret required="true"  id="password" label="#{msg.password}" value="#{rc.newplayer.password}" tabindex="7">
+                                <f:validateLength minimum="2"/>
+                                <f:validateRegex pattern="[A-Za-z0-9]*([A-Za-z][0-9]|[0-9][A-Za-z])[A-Za-z0-9]*"/>
+                            </h:inputSecret>
+                            <h:messages id="password_messages" class="validation_error" for="password" showDetail="true" showSummary="false"/>
+                        </fieldset>
+
+                        <fieldset>    
+                            <h:selectBooleanCheckbox id="showterms" immediate="true" value="#{rc.displayterms}"
+                                                     valueChangeListener="#{rc.displayChanged}" tabindex="8">
+                                <f:ajax render=":form:terms" execute="@this"/>
+                            </h:selectBooleanCheckbox>
+                            <h:outputLabel styleClass="Float" for="showterms" value="#{msg.showterms}"/>
+
+                            <h:panelGroup id="terms">
+                                <br/>
+                                <h:outputText value="#{msg.terms}" rendered="#{rc.displayterms}"/>
+                            </h:panelGroup>
+                        </fieldset>
+
+                        <div id="buttons">
+                            <h:commandButton id="submit" value="#{msg.regbutton}" accesskey="r" action="#{rc.register}" rendered="#{!rc.registrationsuccessful}" tabindex="9"/>
+                        </div>
+                        <h:panelGroup id="goToLogin" layout="block" rendered="#{rc.registrationsuccessful}">
+                            <h:outputText value="#{msg.successgoto} "/>
+                            <h:link value="#{msg.login}" accesskey="l" outcome="index" tabindex="9"/>
+                        </h:panelGroup>
+                    </h:form>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>

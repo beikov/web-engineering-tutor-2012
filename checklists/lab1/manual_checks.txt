@@ -1,0 +1,12 @@
+UE1 - Manual Checks
+===================
+
+* Layout looks as specified
+* CSS uses em or ex where possible (px size is ok for container of images)
+* Road should be an ordered list with li elements
+* JavaScript functionality
+  Click dice and check if car is faded out and faded in at the start
+  Check user name and password (length)
+  Check date validation (format)
+
+* Check heading structure: there must be a H1 (conforming to page title) and only correclty nested sub headings

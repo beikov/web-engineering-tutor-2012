@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Copyright 2013 BIG TU Wien.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+
+<fx:root type="javafx.scene.layout.StackPane" xmlns:fx="http://javafx.com/fxml" fx:controller="at.ac.tuwien.big.testsuite.ui.app.controller.TabControllerUE2" styleClass="tabContainer">
+    <MigPane fx:id="mainFormPane"  cols="[label, pref!][grow][]" >
+        <Label text="Zip file:" /> 
+        <TextField fx:id="zipFileTextField" MigPane.cc="growx" /> 
+        <Button text="select..." onAction="#selectZipFile" MigPane.cc="wrap" />
+        <Label text="Output directory:" /> 
+        <TextField fx:id="targetDirTextField" MigPane.cc="growx" /> 
+        <Button text="select..." onAction="#selectTargetDir" MigPane.cc="wrap" />
+        <Button text="run tests" defaultButton="true" onAction="#validateAll" MigPane.cc="span, align right, wrap"/>
+        <Label fx:id="errorMessageLabel" visible="false" MigPane.cc="span, align center, wrap" styleClass="errorMessage"/>
+        <Label fx:id="successMessageLabel" visible="false" MigPane.cc="span, align center, wrap" styleClass="successMessage"/>
+    </MigPane>
+    <MigPane fx:id="progressInformationPane"  cols="[grow]" visible="false" >
+        <Label fx:id="progressLabel" MigPane.cc="span, align center, wrap"/> 
+        <ProgressBar fx:id="progressIndicator"  MigPane.cc="span, align center, wrap"/>
+    </MigPane>
+</fx:root>

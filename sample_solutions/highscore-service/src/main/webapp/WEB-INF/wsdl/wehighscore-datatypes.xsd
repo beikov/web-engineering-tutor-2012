@@ -1,0 +1,14 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:data="http://big.tuwien.ac.at/we/highscore/data" xmlns:ssd="http://www.dbai.tuwien.ac.at/education/ssd/SS13/uebung/Tournament" targetNamespace="http://big.tuwien.ac.at/we/highscore/data">
+	<xs:import namespace="http://www.dbai.tuwien.ac.at/education/ssd/SS13/uebung/Tournament" schemaLocation="tournament.xsd"/>
+	<!-- Element declarations -->
+	<xs:element name="HighScoreRequest" type="data:HighScoreRequestType"/>
+	<xs:element name="HighScoreResponse" type="xs:string"/>
+	<xs:element name="UserKey" type="xs:string"/>
+	<!-- Complex Types -->
+	<xs:complexType name="HighScoreRequestType">
+		<xs:sequence>
+			<xs:element ref="data:UserKey" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="ssd:tournament" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      lang="#{lang.language}" xml:lang="#{lang.language}">
+
+    <h:head>
+        <title xml:lang="de">Formel 0 - Spielen</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet library="styles" name="screen.css"/>
+        <h:outputScript library="js" name="jquery.js"/>
+    </h:head>
+
+    <h:body>
+        <div id="container">
+            <div id="bordercontainer">
+                <div id="header">
+                    <div id="header_left"><h1 class="accessibility">Formel 0</h1></div>
+                    <div id="header_right"></div>
+                </div>
+                <div id="navigation">
+                    <h2 class="accessibility">Navigation</h2>
+                    <ui:insert name="navigation">
+                        Navigation
+                    </ui:insert>
+                </div>
+
+                <ui:insert name="main-area">
+                    My content
+                </ui:insert>
+            </div>
+            <div id="footer">
+                <ui:insert name="footer">
+                    <ui:include src="/WEB-INF/includes/footer.xhtml">
+                        <ui:param name="year" value="2013"/>
+                    </ui:include>
+                </ui:insert>
+            </div>
+        </div>
+    </h:body>
+</html>

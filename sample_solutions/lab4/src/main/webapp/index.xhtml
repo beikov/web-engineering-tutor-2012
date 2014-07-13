@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:mc="http://java.sun.com/jsf/composite/mycomponents"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+    <body>     
+        <ui:composition template="/WEB-INF/templates/template.xhtml">
+            <ui:define name="navigation">
+                <ul>
+                    <li><a id="register" href="#{facesContext.externalContext.requestContextPath}/register.xhtml" tabindex="1">#{msg.register}</a></li>
+                </ul>
+            </ui:define>
+            <ui:define name="main-area">
+                <mc:login id="login" name="#{lc.name}" password="#{lc.password}" action="#{lc.login}"/>
+                <h:messages id="login_messages" for="login" errorClass="error" showDetail="true" showSummary="false"/>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>

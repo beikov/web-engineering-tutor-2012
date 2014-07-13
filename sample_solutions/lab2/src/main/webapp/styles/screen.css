@@ -1,0 +1,278 @@
+@charset "utf-8";
+
+/* general formatting */
+body  {
+    font: 100% Arial, Helvetica, Clear, sans-serif;
+    background-color: #AAAAAA;
+    margin: 0; 
+    padding: 0;
+    text-align: left;
+    color: #000000;  
+}
+
+h1, h2 {
+    color: #ef9300;
+}
+
+div#container {
+    width: 90%;
+    margin: 10px auto 0 auto;
+    max-width: 1200px;
+    min-width: 600px;
+}
+
+div#bordercontainer {
+    background-color: #FFFFFF;
+    border:1px solid black;
+    width: 100%;
+    float: left;
+}
+
+div#header {
+    background-image: url(../img/header_fill.png);
+    background-repeat: repeat-x;
+    width: 100%;
+    height: 70px;
+}
+
+div#header div#header_left {
+    display: block;
+    float: left;
+    height: 70px;
+    width: 134px;
+    background-image: url(../img/header_left.png);
+    background-repeat: no-repeat;
+}
+
+div#header div#header_right {
+    display: block;
+    float: right;
+    height: 70px;
+    width: 40px;
+    background-image: url(../img/header_right.png);
+    background-repeat: no-repeat;
+}
+
+div#main-area {
+    width: 100%;
+    height:100%;
+    float: left;
+}
+
+div#navigation {
+    width: 100%;
+    height: 1.6em;
+    background-color: #404448;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+}
+
+div#navigation ul {
+    height: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+}
+
+div#navigation li {
+    float: left;
+    margin: 0.3em 0 0.3em 0;
+    padding: 0 5px;
+    border-left:1px solid #FFFFFF;
+    color: #fff;
+    font: 0.8em arial,sans-serif;
+}
+
+div#navigation a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+div#navigation a:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+    font-size: 1em;
+}
+
+div#content {
+    padding: 1em;
+    font: 1em arial,sans-serif;
+    line-height: 1.8em;
+}
+
+div#footer {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    text-align:right;
+    font: 0.8em arial,sans-serif;
+    float: right;
+}
+
+label.registerform {
+    float:left;
+    width: 10em;
+}
+
+fieldset {
+    border: none;
+}
+
+.formblock input[type=submit] {
+    float:right;
+}
+
+.formblock fieldset {
+    clear:both;
+    display:block;
+    border:0;
+}
+
+div.info {
+    float: left;
+    width: 15em;
+    height: 100%;
+    background-color: #404448;
+    border-bottom: 1px solid #000000;
+    border-right: 1px solid #000000;
+    padding-bottom: 1em;
+}
+
+div.info h2 {
+    font: 1.1em arial,sans-serif;
+    text-align: left;
+    margin: 0.8em 0 0.8em 0.8em;
+}
+
+div.info table {
+    text-align: left;
+    margin-left: 0.8em;
+}
+
+div.info th.label {
+    color: #ef9300;
+    font: 0.8em arial,sans-serif;
+    text-align: left;
+}
+
+div.info td.data {
+    color: #fff;
+    padding-left: 1em;
+    font: 0.8em arial,sans-serif;
+}
+
+div.field {
+    float:left;
+    text-align: center;
+    padding-left: 2em;
+    padding-right: 2em;
+    min-width: 10em;
+}
+
+.hide {
+    display: none;
+}
+
+.accessibility {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+}
+
+.validation_error {
+    color: red;
+    font-size: 90%;
+}
+
+/* spielfeld styles */
+
+div#main-area {
+    background-image: url(../img/field_background.png);
+}
+
+div.player {
+    float: left;
+    margin-right: 1em;
+    margin-left: 1em;
+    margin-top: 1em;
+    width: 120px;
+    height: 120px;
+    background-color: #404448;
+    border: 2px solid #FFCC00;
+    text-align: center;
+}
+
+#dice {
+    border: 0;
+}
+
+div#currentPlayerName {
+    font-size: 120%;
+    color: #ffffff;
+    padding-bottom: 0.3em;
+}
+
+ol#road {
+    list-style: none;
+    padding: 0px;
+    margin: 1em 1em;
+}
+
+li#start_road {
+    background-image: url(../img/start_road.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align:top;
+    height: 98px;
+    padding: 0;
+    margin: 0;
+}
+
+li.empty_road {
+    background-image: url(../img/empty_road.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align:top;
+    height: 80px;
+    padding: 0;
+    margin: 0;
+}
+
+li.oil_road {
+    background-image: url(../img/oil_road.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align:top;
+    height: 80px;
+    padding: 0;
+    margin: 0;
+}
+
+li#finish_road {
+    background-image: url(../img/finish_road.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: top;
+    height: 98px;
+    padding: 0;
+    margin: 0;
+}
+
+span#player1 {
+    background-image: url(../img/car1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 90px;
+    width: 70px;
+    float: left;
+}
+
+span#player2 {
+    background-image: url(../img/car2.png);
+    background-repeat: no-repeat;
+    background-position: 0px 10px;
+    height: 90px;
+    width: 50px;
+    float: right;
+}

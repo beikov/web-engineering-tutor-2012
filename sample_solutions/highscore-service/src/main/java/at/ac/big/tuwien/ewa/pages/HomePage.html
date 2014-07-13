@@ -1,0 +1,35 @@
+
+<wicket:extend>
+
+	
+	
+	<table class="table table-bordered table-hover">
+	
+		<thead>
+			<tr>
+				<th width="20%">Eintragsdatum</th>
+				<th width="30%">UUID</th>
+				<th width="50%">Details</th>
+			</tr>
+		</thead>
+		<tbody>
+		
+			<wicket:container wicket:id="repeater">
+		
+			<tr>
+				<td><label wicket:id="received"/></td>
+				<td><label wicket:id="id"/></td>
+				<td><span wicket:id="detailsPanel"/></td>
+			</tr>
+			
+			</wicket:container>
+					
+		</tbody>
+	
+	
+	</table>
+	
+	
+
+
+</wicket:extend>

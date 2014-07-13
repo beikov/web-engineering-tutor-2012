@@ -1,0 +1,3 @@
+grant codeBase "file:${testsuite.base}" {
+    permission java.security.AllPermission;
+};

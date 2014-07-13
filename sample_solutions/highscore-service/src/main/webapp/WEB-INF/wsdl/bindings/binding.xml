@@ -1,0 +1,11 @@
+<xs:schema elementFormDefault="qualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0" targetNamespace="calendar-schemalet">
+  <xs:annotation><xs:appinfo>
+    <jaxb:globalBindings>
+      <jaxb:javaType name="java.util.Calendar" xmlType="xs:date"
+        parseMethod="javax.xml.bind.DatatypeConverter.parseDate"
+        printMethod="javax.xml.bind.DatatypeConverter.printDate"
+        />
+		<jaxb:serializable/>
+    </jaxb:globalBindings>
+  </xs:appinfo></xs:annotation>
+</xs:schema>

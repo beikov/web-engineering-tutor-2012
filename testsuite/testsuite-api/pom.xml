@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>at.ac.tuwien.big</groupId>
+        <artifactId>testsuite</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+  
+    <artifactId>testsuite-api</artifactId>
+    <name>testsuite-api</name>
+  
+    <properties>
+        <!-- Netbeans specific hints -->
+        <netbeans.hint.license>apache20</netbeans.hint.license>
+    </properties>
+    
+    <dependencies>
+        
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+        </dependency>
+        
+        <!-- JSR-330 -->		
+        <dependency>
+            <groupId>org.apache.geronimo.specs</groupId>
+            <artifactId>geronimo-atinject_1.0_spec</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit-dep</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
